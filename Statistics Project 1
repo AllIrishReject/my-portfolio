@@ -1,0 +1,401 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "id": "6350c1c4",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#Descriptive Statistics #Question 3\n",
+    "\n",
+    "import pandas as pd"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "id": "667690cb",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "dataset = pd.read_excel('/Users/jasondonohoe/Documents/CCT/Statistics/Annual Freshwater Withdrawals.xlsx')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "id": "3fd2c7d4",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>Year</th>\n",
+       "      <th>Annual Freshwater Withdrawals</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>count</th>\n",
+       "      <td>28.000000</td>\n",
+       "      <td>28.000000</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>mean</th>\n",
+       "      <td>2006.500000</td>\n",
+       "      <td>16.996521</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>std</th>\n",
+       "      <td>8.225975</td>\n",
+       "      <td>4.339582</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>min</th>\n",
+       "      <td>1993.000000</td>\n",
+       "      <td>8.640000</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>25%</th>\n",
+       "      <td>1999.750000</td>\n",
+       "      <td>13.205000</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>50%</th>\n",
+       "      <td>2006.500000</td>\n",
+       "      <td>18.506600</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>75%</th>\n",
+       "      <td>2013.250000</td>\n",
+       "      <td>20.902900</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>max</th>\n",
+       "      <td>2020.000000</td>\n",
+       "      <td>22.160200</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "              Year  Annual Freshwater Withdrawals\n",
+       "count    28.000000                      28.000000\n",
+       "mean   2006.500000                      16.996521\n",
+       "std       8.225975                       4.339582\n",
+       "min    1993.000000                       8.640000\n",
+       "25%    1999.750000                      13.205000\n",
+       "50%    2006.500000                      18.506600\n",
+       "75%    2013.250000                      20.902900\n",
+       "max    2020.000000                      22.160200"
+      ]
+     },
+     "execution_count": 17,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "dataset.describe()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 20,
+   "id": "52f4d849",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "16.99652076321428\n"
+     ]
+    }
+   ],
+   "source": [
+    "\n",
+    "mean_adm= dataset['Annual Freshwater Withdrawals'].mean()\n",
+    "print(mean_adm)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 21,
+   "id": "d619d5e6",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "18.5066\n"
+     ]
+    }
+   ],
+   "source": [
+    "median = dataset['Annual Freshwater Withdrawals'].median()\n",
+    "print(median)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 22,
+   "id": "6c1a626d",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "0      8.640000\n",
+      "1      9.220000\n",
+      "2     10.530000\n",
+      "3     10.623000\n",
+      "4     12.058641\n",
+      "5     12.330000\n",
+      "6     13.175000\n",
+      "7     13.215000\n",
+      "8     14.027000\n",
+      "9     15.203550\n",
+      "10    15.868000\n",
+      "11    16.380100\n",
+      "12    17.556650\n",
+      "13    18.463000\n",
+      "14    18.550200\n",
+      "15    18.733200\n",
+      "16    19.148000\n",
+      "17    19.433400\n",
+      "18    19.850200\n",
+      "19    20.133600\n",
+      "20    20.833800\n",
+      "21    21.110200\n",
+      "22    21.534000\n",
+      "23    21.659240\n",
+      "24    21.716200\n",
+      "25    21.822200\n",
+      "26    21.928200\n",
+      "27    22.160200\n",
+      "Name: Annual Freshwater Withdrawals, dtype: float64\n"
+     ]
+    }
+   ],
+   "source": [
+    "mode = dataset['Annual Freshwater Withdrawals'].mode()\n",
+    "print(mode)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 25,
+   "id": "804268b8",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import statistics"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 28,
+   "id": "8dfbe8b9",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "stddev = statistics.stdev(dataset['Annual Freshwater Withdrawals'])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 29,
+   "id": "dd729bb7",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "4.33958224760383\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(stddev)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 30,
+   "id": "2cf027c2",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "18.83197408371831\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(statistics.variance(dataset['Annual Freshwater Withdrawals']))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "aef5db15",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 38,
+   "id": "ef5111db",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "25\n"
+     ]
+    }
+   ],
+   "source": [
+    "#Probabilities Question #1\n",
+    "\n",
+    "result = 1 / (4/100)\n",
+    "print(int(result))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "0d297bcd",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 40,
+   "id": "816fa58a",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#Probabiliries Question #2\n",
+    "\n",
+    "import scipy.stats as stats"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 41,
+   "id": "5639d909",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "average = 10.5\n",
+    "std_deviation = 2\n",
+    "\n",
+    "total_years = 4\n",
+    "years_greater_than_11_bcm = 2"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 50,
+   "id": "44e81575",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "0.4012936743170763\n"
+     ]
+    }
+   ],
+   "source": [
+    "from scipy.stats import norm\n",
+    "\n",
+    "p = norm.sf(11, average, std_deviation)\n",
+    "print(p)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 51,
+   "id": "a28b7f6a",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "0.34634073294108836"
+      ]
+     },
+     "execution_count": 51,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "from scipy.stats import binom\n",
+    "\n",
+    "binom.pmf(years_greater_than_11_bcm, total_years, p)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "90290c18",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.11.4"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
